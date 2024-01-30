@@ -1,0 +1,11 @@
+package:
+  name: cuda-samples
+  version: 11.5.56
+source:
+  fn: cuda_samples-windows-x86_64-11.5.56.zip
+  md5: 18bf0eed7bdb2f28c762d9ce5e7febb4
+  url: cuda_samples-windows-x86_64-11.5.56.zip
+outputs:
+  - name: cuda-samples
+extra:
+  final: null
