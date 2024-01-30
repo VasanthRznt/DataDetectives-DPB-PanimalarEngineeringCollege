@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amazon Reviews</title>
+  <title>Highlight Sponsored</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -18,29 +18,24 @@
       text-align: center;
     }
 
-    #reviewsContainer {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+    p {
+      text-align: center;
     }
 
-    .reviewCard {
-      background-color: #444;
-      padding: 10px;
+    button {
+      background-color: #008CBA;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
       border-radius: 5px;
-      margin: 10px;
-      width: 300px;
-    }
-
-    .reviewCard h3,
-    .reviewCard p {
-      margin: 5px 0;
+      cursor: pointer;
     }
   </style>
   <script src="popup.js"></script>
 </head>
 <body>
-  <h1>Amazon Reviews</h1>
-  <div id="reviewsContainer"></div>
+  <h1>Highlight Sponsored</h1>
+  <p>Click the button to highlight "Sponsored" text on Amazon.</p>
+  <button id="highlightButton">Highlight Sponsored Text</button>
 </body>
 </html>

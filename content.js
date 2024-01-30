@@ -1,28 +1,26 @@
 // content.js
-function scrapeAmazonReviews() {
-    const nameElements = document.querySelectorAll('div.a-profile-content span.a-profile-name');
-    const ratingElements = document.querySelectorAll('div.a-row div.a-row span.a-icon-alt');
-    const reviewTextElements = document.querySelectorAll('div.a-row.a-spacing-small.review-data span');
-  
-    const result = [];
-  
-    for (let i = 0; i < nameElements.length; i++) {
-      const name = nameElements[i]?.innerText.trim() || 'N/A';
-      const rating = ratingElements[i]?.innerText.trim() || 'N/A';
-      const reviewText = reviewTextElements[i]?.innerText.trim() || 'N/A';
-  
-      result.push({ name, rating, reviewText });
-    }
-  
-    return result;
-  }
-  
-  chrome.runtime.onMessage.addListener(
-    function (request, sender, sendResponse) {
-      if (request.action === "scrapeAmazonReviews") {
-        const reviewsData = scrapeAmazonReviews();
-        sendResponse({ reviewsData });
+function highlightSponsoredText() {
+  const sponsoredElements = document.querySelectorAll('.puis-label-popover-hover span.a-color-base');
+
+  sponsoredElements.forEach(element => {
+    if (element.textContent.trim().toLowerCase() === 'sponsored') {
+      const outerDivision = findOuterDivision(element);
+      if (outerDivision) {
+        outerDivision.style.backgroundColor = 'red';
+        outerDivision.style.padding = '5px';
       }
     }
-  );
-  
+  });
+
+  return { success: true };
+}
+
+function findOuterDivision(element) {
+  let currentElement = element;
+  while (currentElement && currentElement.tagName !== 'DIV') {
+    currentElement = currentElement.parentElement;
+  }
+  return currentElement;
+}
+
+highlightSponsoredText();

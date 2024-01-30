@@ -1,9 +1,9 @@
 
 {
   "manifest_version": 3,
-  "name": "Amazon Reviews Scraper",
+  "name": "Highlight Sponsored",
   "version": "1.0",
-  "description": "Scrape and display Amazon reviews.",
+  "description": "Highlight 'Sponsored' text on Amazon.",
   "permissions": ["activeTab"],
   "background": {
     "service_worker": "background.js"
@@ -18,13 +18,5 @@
       "matches": ["*://www.amazon.com/*"],
       "js": ["content.js"]
     }
-  ],
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "icon.png",
-      "48": "icon.png",
-      "128": "icon.png"
-    }
-  }
+  ]
 }
