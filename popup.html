@@ -1,15 +1,38 @@
-<!-- popup.html -->
+<!-- index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Web Scraper</title>
- 
+    
+    <title>Send Data to Flask</title>
 </head>
 <body>
-  <button id="scrapeButton">Scrape Content</button>
-  <div id="result"></div>
-  <script src="popup.js"></script>
-</body>
+<h1>hello</h1>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Replace with your Flask server URL
+        const apiUrl = 'http://127.0.0.1:5000/receive_data';
 
+        const dataToSend = {
+            key1: 'value1',
+            key2: 'value2'
+        };
+
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dataToSend),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Server response:', data);
+        })
+        .catch(error => {
+            console.error('Error sending data:', error);
+        });
+    });
+</script>
+
+</body>
 </html>
-<!-- popup.html -->
