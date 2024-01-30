@@ -1,0 +1,41 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Highlight Sponsored</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #333;
+      color: #fff;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #ffcc00;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    button {
+      background-color: #008CBA;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <script src="popup.js"></script>
+</head>
+<body>
+  <h1>Highlight Sponsored</h1>
+  <p>Click the button to highlight "Sponsored" text on Amazon.</p>
+  <button id="highlightButton">Highlight Sponsored Text</button>
+</body>
+</html>

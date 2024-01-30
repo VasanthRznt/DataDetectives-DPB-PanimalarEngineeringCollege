@@ -1,0 +1,22 @@
+
+{
+  "manifest_version": 3,
+  "name": "Highlight Sponsored",
+  "version": "1.0",
+  "description": "Highlight 'Sponsored' text on Amazon.",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.amazon.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
