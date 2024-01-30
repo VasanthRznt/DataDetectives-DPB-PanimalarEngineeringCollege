@@ -1,18 +1,30 @@
-// manifest.json
+
 {
-  "manifest_version": 2,
-  "name": "Web Scraper",
+  "manifest_version": 3,
+  "name": "Amazon Reviews Scraper",
   "version": "1.0",
-  "description": "Scrape and display content from a website",
-  "permissions": ["activeTab", "storage"],
-  "browser_action": {
-    
-    "default_popup": "popup.html"
+  "description": "Scrape and display Amazon reviews.",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["*://www.amazon.com/*"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
 }
